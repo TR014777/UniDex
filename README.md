@@ -19,7 +19,9 @@ Basta digitar o **nome** ou **ID** de um Pokémon para resgatar dados como **nom
 ---
 
 ## 🖼️ Exemplo de tela
-![Exemplo do UniDex](./96d48274-6b4c-4705-a1c6-c7d9bcfb1638.png)
+![Exemplo do UniDex]
+<img width="1351" height="749" alt="image" src="https://github.com/user-attachments/assets/eefdebe7-7598-4f67-9423-017a75df5f5d" />
+
 
 ---
 
