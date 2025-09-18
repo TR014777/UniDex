@@ -1,8 +1,8 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import pokemon_detail
-
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('pokemon/<str:name>/', pokemon_detail),
+    path('', views.resgatar_pokemon, name='resgatar_pokemon'),
+    path('api/pokemon/<str:name>/', views.pokemon_detail, name='pokemon_detail'),
 ]
+

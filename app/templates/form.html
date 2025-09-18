@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>UniDex</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'app/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="cabecalho">
+    <h1 class="cabecalho-titulo">UniDex</h1>
+  </header>
+  <form method="GET" action="{% url 'resgatar_pokemon' %}" class="form">
+    <label class="form-label" for="pokemon">Nome do Pokémon ou ID:</label>
+    <input class="form-campo" type="text" name="name" id="pokemon" placeholder="Ex: pikachu">
+    <button class="form-botao" type="submit">Resgatar Pokémon</button>
+  </form>
+
+  {% if pokemon %}
+    <div class="pokemon-card">
+      <h2>{{ pokemon.name|title }}</h2>
+      <img class="pokemon-icon" src="{{ pokemon.image }}" alt="{{ pokemon.name }}"">
+      <p><b>ID:</b> {{ pokemon.id }}</p>
+      <p><b>Altura:</b> {{ pokemon.height }}</p>
+      <p><b>Peso:</b> {{ pokemon.weight }}</p>
+      <p><b>Tipos:</b> {{ pokemon.types|join:", " }}</p>
+    </div>
+  {% elif error %}
+    <p style="color:red">{{ error }}</p>
+  {% endif %}
+</body>
+</html>
