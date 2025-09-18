@@ -1,7 +1,9 @@
 from rest_framework import serializers
-from .models import Pokemon
 
-class PokemonSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Pokemon
-        fields = ['id', 'nome', 'icon', 'tipo']
+class PokemonSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    name = serializers.CharField()
+    height = serializers.IntegerField()
+    weight = serializers.IntegerField()
+    types = serializers.ListField(child=serializers.CharField())
+    image = serializers.URLField()
